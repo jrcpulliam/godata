@@ -17,7 +17,7 @@ require(dplyr)
 library(ggplot2)
 library(purrr)
 
-path_to_functions <- here::here("functions")
+path_to_functions <- here::here("scripts")
 scripts_files <- dir(path_to_functions, pattern = ".R$", full.names=TRUE)
 for (file in scripts_files) source(file, local = TRUE)
 ```
@@ -26,9 +26,9 @@ for (file in scripts_files) source(file, local = TRUE)
 
 clean_folder <- here::here("data", "clean")
 
-current_clean_cases <- get_latest_data("^cases.*.csv", clean_folder)
-current_clean_contacts <- get_latest_data("^contacts.*.csv", clean_folder)
-current_clean_followups <- get_latest_data("^followups.*.csv", clean_folder)
+current_clean_cases <- get_latest_data("^cases_clean.*.csv", clean_folder)
+current_clean_contacts <- get_latest_data("^contacts_clean.*.csv", clean_folder)
+current_clean_followups <- get_latest_data("^followups_clean.*.csv", clean_folder)
 # current_clean_locations <- get_latest_data("^location*.rds", clean_folder)
 
 current_clean_cases
